@@ -214,7 +214,7 @@ PulseBoard/
 Clone the repository.
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/danuka-acentura/Python_Assignment.git
 ```
 
 Navigate to the project.
