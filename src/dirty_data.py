@@ -150,17 +150,17 @@ def inject_invalid_values():
         df.loc[
             idx[:third],
             "units"
-        ] = -5
+        ] = -np.random.randint(1, 100)
 
         df.loc[
             idx[third:2*third],
             "unit_price"
-        ] = 0
+        ] = -np.random.randint(0, 100)
 
         df.loc[
             idx[2*third:],
             "discount_pct"
-        ] = 150
+        ] = np.random.randint(101, 200)
 
         df.to_csv(
             RAW_DATA / file,

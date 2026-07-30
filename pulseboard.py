@@ -36,7 +36,6 @@ def clean_command():
 def report_command(month, region):
     """Generate a dashboard for a given month and region."""
 
-    
     parquet = CLEAN_DATA / "clean_sales.parquet"
     print("Looking for:", parquet)
     print("Exists:", parquet.exists())

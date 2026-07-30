@@ -59,28 +59,141 @@ class DataPipeline:
             self.raw_path / "customer_footfall.csv"
         )
         
-
+        
     def profile_data(self):
 
         report = []
 
         datasets = {
-
             "sales": self.sales,
-
             "stores": self.stores,
-
             "products": self.products,
-
             "returns": self.returns,
-
             "footfall": self.footfall
-
         }
+
+        # -------------------------------
+        # Orphan store ids
+        # -------------------------------
+
+        orphan_store_ids = (
+            ~self.sales["store_id"].isin(
+                self.stores["store_id"]
+            )
+        ).sum()
+
+        # -------------------------------
+        # Orphan product ids
+        # -------------------------------
+
+        orphan_product_ids = (
+            ~self.sales["product_id"].isin(
+                self.products["product_id"]
+            )
+        ).sum()
+
+        # -------------------------------
+        # Orphan transaction ids
+        # -------------------------------
+
+        orphan_transactions = (
+            ~self.returns["transaction_id"].isin(
+                self.sales["transaction_id"]
+            )
+        ).sum()
+
+        # -------------------------------
+        # Loop every dataset
+        # -------------------------------
 
         for name, df in datasets.items():
 
+            duplicate_rows = df.duplicated().sum()
+
             for col in df.columns:
+
+                dtype = str(df[col].dtype)
+
+                missing = round(
+                    df[col].isna().mean() * 100,
+                    2
+                )
+
+                # ------------------------
+                # dtype issue
+                # ------------------------
+
+                dtype_issue = "No"
+
+                if df[col].dtype == object:
+
+                    sample = df[col].dropna().head(50)
+
+                    try:
+
+                        pd.to_numeric(sample)
+
+                        dtype_issue = "Possible numeric stored as text"
+
+                    except:
+
+                        try:
+
+                            pd.to_datetime(sample)
+
+                            dtype_issue = "Possible date stored as text"
+
+                        except:
+
+                            pass
+
+                # ------------------------
+                # out of range values
+                # ------------------------
+
+                out_of_range = 0
+
+                if col == "units":
+
+                    out_of_range = (
+                        df[col] < 0
+                    ).sum()
+
+                elif col == "unit_price":
+
+                    out_of_range = (
+                        df[col] <= 0
+                    ).sum()
+
+                elif col == "discount_pct":
+
+                    out_of_range = (
+                        df[col] > 100
+                    ).sum()
+
+                elif col == "footfall":
+
+                    out_of_range = (
+                        df[col] < 0
+                    ).sum()
+
+                # ------------------------
+                # orphan keys
+                # ------------------------
+
+                orphan = 0
+
+                if name == "sales" and col == "store_id":
+
+                    orphan = orphan_store_ids
+
+                elif name == "sales" and col == "product_id":
+
+                    orphan = orphan_product_ids
+
+                elif name == "returns" and col == "transaction_id":
+
+                    orphan = orphan_transactions
 
                 report.append({
 
@@ -88,56 +201,95 @@ class DataPipeline:
 
                     "column": col,
 
-                    "dtype": str(df[col].dtype),
+                    "dtype": dtype,
 
-                    "missing_percent":
+                    "missing_percent": missing,
 
-                        round(
+                    "duplicates": duplicate_rows,
 
-                            df[col].isna().mean()*100,
+                    # "dtype_issue": dtype_issue,
 
-                            2
+                    "orphan_keys": orphan,
 
-                        ),
-
-                    "duplicates":
-
-                        df.duplicated().sum()
+                    "out_of_range": out_of_range
 
                 })
 
         self.quality_report = pd.DataFrame(report)
 
-        return self.quality_report   
-     
+        return self.quality_report
 
     def clean_dates(self):
 
-        date_columns = [
+        datasets = [
 
-            (self.sales, ["date"]),
+            (self.sales, "date"),
 
-            (self.stores, ["opened_date"]),
+            (self.stores, "opened_date"),
 
-            (self.products, ["launch_date"]),
+            (self.products, "launch_date"),
 
-            (self.returns, ["return_date"]),
+            (self.returns, "return_date"),
 
-            (self.footfall, ["timestamp"])
+            (self.footfall, "timestamp")
 
         ]
 
-        for df, columns in date_columns:
+        for df, date_col in datasets:
 
-            for col in columns:
+            if date_col not in df.columns:
+                continue
 
-                if col in df.columns:
+            # Convert everything to string first
+            df[date_col] = df[date_col].astype(str).str.strip()
 
-                    df[col] = pd.to_datetime(
-                        df[col],
-                        errors="coerce",
-                        utc=True
-                    )
+            # Parse mixed date formats
+            df[date_col] = pd.to_datetime(
+                df[date_col],
+                errors="coerce",
+                format="mixed",      
+                utc=True
+            )
+
+            # Remove invalid dates
+            df.dropna(subset=[date_col], inplace=True)
+
+            # Sort chronologically
+            df.sort_values(date_col, inplace=True)
+
+            # Make tz-aware datetime index
+            df.set_index(date_col, inplace=True)
+
+            # Keep the column as well if needed later
+            df[date_col] = df.index
+
+    # def clean_dates(self):
+
+    #     date_columns = [
+
+    #         (self.sales, ["date"]),
+
+    #         (self.stores, ["opened_date"]),
+
+    #         (self.products, ["launch_date"]),
+
+    #         (self.returns, ["return_date"]),
+
+    #         (self.footfall, ["timestamp"])
+
+    #     ]
+
+    #     for df, columns in date_columns:
+
+    #         for col in columns:
+
+    #             if col in df.columns:
+
+    #                 df[col] = pd.to_datetime(
+    #                     df[col],
+    #                     errors="coerce",
+    #                     utc=True
+    #                 )
                 
     def clean_categories(self):
 
@@ -397,7 +549,7 @@ class DataPipeline:
         )
 
         self.analytics = merged
-
+        
         return merged
     
 
@@ -482,6 +634,14 @@ class DataPipeline:
 
                 cmap="Reds"
 
+            )
+            .background_gradient(
+                subset=["out_of_range"],
+                cmap="Oranges"
+            )
+            .background_gradient(
+                subset=["orphan_keys"],
+                cmap="Purples"
             )
 
         )

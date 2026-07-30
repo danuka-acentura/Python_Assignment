@@ -22,18 +22,35 @@ def generate_stores():
         "South",
         "East",
         "West",
-        "Central"
+        "Central",
+        "North-East",
+        "South-West",
+        "North-West",
+        "South-East",    
     ]
 
     cities = [
-        "Colombo",
-        "Kandy",
-        "Galle",
-        "Jaffna",
-        "Kurunegala",
-        "Negombo",
-        "Matara",
-        "Badulla"
+        "Colombo", "Dehiwala-Mount Lavinia", "Moratuwa", "Sri Jayawardenepura Kotte",
+        "Negombo", "Gampaha", "Kalutara", "Panadura", "Horana", "Ja-Ela",
+        "Wattala", "Kelaniya", "Avissawella", "Homagama", "Maharagama",
+        "Piliyandala", "Kesbewa", "Kadawatha", "Ragama", "Minuwangoda",
+        "Kandy", "Matale", "Nuwara Eliya", "Gampola", "Hatton",
+        "Dambulla", "Nawalapitiya", "Talawakele",
+        "Galle", "Matara", "Hambantota", "Tangalle", "Ambalangoda",
+        "Hikkaduwa", "Weligama", "Akuressa", "Deniyaya", "Beliatta",
+        "Jaffna", "Kilinochchi", "Vavuniya", "Mullaitivu", "Mannar",
+        "Point Pedro", "Chavakachcheri", "Delft",
+        "Trincomalee", "Batticaloa", "Ampara", "Kalmunai",
+        "Akkaraipattu", "Sammanthurai", "Eravur", "Kattankudy",
+        "Kurunegala", "Puttalam", "Chilaw", "Kuliyapitiya",
+        "Narammala", "Wariyapola", "Nikaweratiya", "Bingiriya",
+        "Anuradhapura", "Polonnaruwa", "Kekirawa",
+        "Medirigiriya", "Galnewa", "Hingurakgoda",
+        "Badulla", "Bandarawela", "Monaragala",
+        "Ella", "Wellawaya", "Haputale", "Mahiyanganaya",
+        "Ratnapura", "Kegalle", "Balangoda", "Embilipitiya",
+        "Eheliyagoda", "Pelmadulla", "Rakwana",
+        "Kuruwita", "Mawanella"
     ]
 
     stores = []
