@@ -253,12 +253,27 @@ def export_command(fmt):
 
     elif fmt == "excel":
 
+        # df.to_excel(
+        #     CLEAN_DATA / "clean_sales.xlsx",
+        #     index=False
+        # )
+
+        # print("Excel exported.")
+        for column in df.columns:
+
+            if pd.api.types.is_datetime64tz_dtype(df[column]):
+
+                df[column] = df[column].dt.tz_localize(None)
+
         df.to_excel(
             CLEAN_DATA / "clean_sales.xlsx",
             index=False
         )
 
-        print("Excel exported.")
+        print(
+            f"Excel exported to: "
+            f"{CLEAN_DATA / 'clean_sales.xlsx'}"
+        )
 
     elif fmt == "html":
 

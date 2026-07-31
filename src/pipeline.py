@@ -262,34 +262,8 @@ class DataPipeline:
 
             # Keep the column as well if needed later
             df[date_col] = df.index
+            print('df[date_col] : ',df[date_col].head())
 
-    # def clean_dates(self):
-
-    #     date_columns = [
-
-    #         (self.sales, ["date"]),
-
-    #         (self.stores, ["opened_date"]),
-
-    #         (self.products, ["launch_date"]),
-
-    #         (self.returns, ["return_date"]),
-
-    #         (self.footfall, ["timestamp"])
-
-    #     ]
-
-    #     for df, columns in date_columns:
-
-    #         for col in columns:
-
-    #             if col in df.columns:
-
-    #                 df[col] = pd.to_datetime(
-    #                     df[col],
-    #                     errors="coerce",
-    #                     utc=True
-    #                 )
                 
     def clean_categories(self):
 

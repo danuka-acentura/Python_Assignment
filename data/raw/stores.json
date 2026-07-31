@@ -1,282 +1,282 @@
 [
     {
         "store_id": "S001",
-        "region": "South-West",
-        "city": "Sammanthurai",
-        "opened_date": "2017-05-10 00:00:00",
-        "sqft": 7890
+        "region": "West",
+        "city": "Kurunegala",
+        "opened_date": "2018-07-18 00:00:00",
+        "sqft": 7691
     },
     {
         "store_id": "S002",
-        "region": "North-West",
-        "city": "Nikaweratiya",
-        "opened_date": "2023-06-20 00:00:00",
-        "sqft": 8234
+        "region": "Central",
+        "city": "Kurunegala",
+        "opened_date": "2019-06-27 00:00:00",
+        "sqft": 8765
     },
     {
         "store_id": "S003",
         "region": "East",
-        "city": "Mahiyanganaya",
-        "opened_date": "2019-01-22 00:00:00",
-        "sqft": 10822
+        "city": "Matara",
+        "opened_date": "2015-11-27 00:00:00",
+        "sqft": 8078
     },
     {
         "store_id": "S004",
-        "region": "North-East",
-        "city": "Eravur",
-        "opened_date": "2017-02-08 00:00:00",
-        "sqft": 9449
+        "region": "Central",
+        "city": "Jaffna",
+        "opened_date": "2022-12-29 00:00:00",
+        "sqft": 10822
     },
     {
         "store_id": "S005",
+        "region": "Central",
+        "city": "Kandy",
+        "opened_date": "2021-07-19 00:00:00",
+        "sqft": 9449
+    },
+    {
+        "store_id": "S006",
         "region": "South",
-        "city": "Polonnaruwa",
+        "city": "Badulla",
         "opened_date": "2017-08-13 00:00:00",
         "sqft": 8920
     },
     {
-        "store_id": "S006",
+        "store_id": "S007",
         "region": "North",
-        "city": "Ratnapura",
+        "city": "Jaffna",
         "opened_date": "2024-04-08 00:00:00",
         "sqft": 8896
     },
     {
-        "store_id": "S007",
-        "region": "South-East",
-        "city": "Ampara",
+        "store_id": "S008",
+        "region": "West",
+        "city": "Colombo",
         "opened_date": "2016-04-19 00:00:00",
         "sqft": 11774
     },
     {
-        "store_id": "S008",
+        "store_id": "S009",
+        "region": "South",
+        "city": "Badulla",
+        "opened_date": "2022-07-10 00:00:00",
+        "sqft": 11667
+    },
+    {
+        "store_id": "S010",
         "region": "East",
-        "city": "Kurunegala",
+        "city": "Jaffna",
         "opened_date": "2018-06-21 00:00:00",
         "sqft": 4028
     },
     {
-        "store_id": "S009",
+        "store_id": "S011",
         "region": "East",
-        "city": "Akkaraipattu",
+        "city": "Kurunegala",
         "opened_date": "2016-10-08 00:00:00",
         "sqft": 7893
     },
     {
-        "store_id": "S010",
+        "store_id": "S012",
         "region": "West",
-        "city": "Wariyapola",
-        "opened_date": "2020-08-23 00:00:00",
+        "city": "Colombo",
+        "opened_date": "2021-06-21 00:00:00",
         "sqft": 10933
     },
     {
-        "store_id": "S011",
-        "region": "South-East",
-        "city": "Eravur",
-        "opened_date": "2023-01-24 00:00:00",
-        "sqft": 8735
+        "store_id": "S013",
+        "region": "South",
+        "city": "Colombo",
+        "opened_date": "2024-05-10 00:00:00",
+        "sqft": 5112
     },
     {
-        "store_id": "S012",
-        "region": "South-West",
-        "city": "Point Pedro",
-        "opened_date": "2021-12-31 00:00:00",
+        "store_id": "S014",
+        "region": "South",
+        "city": "Jaffna",
+        "opened_date": "2020-11-09 00:00:00",
+        "sqft": 7986
+    },
+    {
+        "store_id": "S015",
+        "region": "West",
+        "city": "Matara",
+        "opened_date": "2024-07-31 00:00:00",
         "sqft": 3275
     },
     {
-        "store_id": "S013",
+        "store_id": "S016",
         "region": "East",
-        "city": "Balangoda",
+        "city": "Negombo",
         "opened_date": "2023-08-19 00:00:00",
         "sqft": 4085
     },
     {
-        "store_id": "S014",
-        "region": "North-West",
-        "city": "Sri Jayawardenepura Kotte",
-        "opened_date": "2023-06-01 00:00:00",
-        "sqft": 3521
-    },
-    {
-        "store_id": "S015",
-        "region": "North-East",
-        "city": "Kattankudy",
-        "opened_date": "2018-02-03 00:00:00",
+        "store_id": "S017",
+        "region": "West",
+        "city": "Kandy",
+        "opened_date": "2017-10-18 00:00:00",
         "sqft": 6343
     },
     {
-        "store_id": "S016",
-        "region": "North-East",
-        "city": "Anuradhapura",
+        "store_id": "S018",
+        "region": "Central",
+        "city": "Matara",
         "opened_date": "2021-09-15 00:00:00",
         "sqft": 9373
     },
     {
-        "store_id": "S017",
-        "region": "South",
-        "city": "Haputale",
-        "opened_date": "2020-06-04 00:00:00",
+        "store_id": "S019",
+        "region": "West",
+        "city": "Kandy",
+        "opened_date": "2015-07-21 00:00:00",
         "sqft": 3495
     },
     {
-        "store_id": "S018",
-        "region": "North-West",
-        "city": "Balangoda",
-        "opened_date": "2018-06-29 00:00:00",
-        "sqft": 3516
-    },
-    {
-        "store_id": "S019",
-        "region": "North-West",
-        "city": "Eheliyagoda",
-        "opened_date": "2015-12-04 00:00:00",
-        "sqft": 3378
-    },
-    {
         "store_id": "S020",
-        "region": "Central",
-        "city": "Gampola",
-        "opened_date": "2021-03-14 00:00:00",
-        "sqft": 7359
+        "region": "West",
+        "city": "Colombo",
+        "opened_date": "2021-06-01 00:00:00",
+        "sqft": 10392
     },
     {
         "store_id": "S021",
-        "region": "South-East",
-        "city": "Galle",
-        "opened_date": "2020-08-24 00:00:00",
-        "sqft": 2564
+        "region": "Central",
+        "city": "Kandy",
+        "opened_date": "2017-05-28 00:00:00",
+        "sqft": 11768
     },
     {
         "store_id": "S022",
-        "region": "South-East",
-        "city": "Monaragala",
+        "region": "South",
+        "city": "Colombo",
+        "opened_date": "2017-02-02 00:00:00",
+        "sqft": 8831
+    },
+    {
+        "store_id": "S023",
+        "region": "West",
+        "city": "Kurunegala",
+        "opened_date": "2023-07-10 00:00:00",
+        "sqft": 7776
+    },
+    {
+        "store_id": "S024",
+        "region": "Central",
+        "city": "Colombo",
         "opened_date": "2022-01-12 00:00:00",
         "sqft": 7963
     },
     {
-        "store_id": "S023",
+        "store_id": "S025",
         "region": "North",
-        "city": "Panadura",
-        "opened_date": "2019-02-04 00:00:00",
+        "city": "Jaffna",
+        "opened_date": "2022-05-19 00:00:00",
         "sqft": 7758
     },
     {
-        "store_id": "S024",
+        "store_id": "S026",
         "region": "East",
-        "city": "Pelmadulla",
+        "city": "Colombo",
         "opened_date": "2016-01-27 00:00:00",
         "sqft": 8392
     },
     {
-        "store_id": "S025",
-        "region": "South-West",
-        "city": "Vavuniya",
-        "opened_date": "2023-06-27 00:00:00",
-        "sqft": 8778
-    },
-    {
-        "store_id": "S026",
-        "region": "South-East",
-        "city": "Ella",
-        "opened_date": "2017-02-18 00:00:00",
-        "sqft": 5604
-    },
-    {
         "store_id": "S027",
-        "region": "South-West",
-        "city": "Nuwara Eliya",
-        "opened_date": "2019-10-18 00:00:00",
-        "sqft": 11496
+        "region": "South",
+        "city": "Matara",
+        "opened_date": "2023-05-24 00:00:00",
+        "sqft": 8684
     },
     {
         "store_id": "S028",
-        "region": "East",
-        "city": "Point Pedro",
-        "opened_date": "2020-03-10 00:00:00",
-        "sqft": 10654
+        "region": "West",
+        "city": "Matara",
+        "opened_date": "2015-07-20 00:00:00",
+        "sqft": 5604
     },
     {
         "store_id": "S029",
+        "region": "Central",
+        "city": "Galle",
+        "opened_date": "2022-06-24 00:00:00",
+        "sqft": 10654
+    },
+    {
+        "store_id": "S030",
         "region": "East",
-        "city": "Kekirawa",
+        "city": "Colombo",
         "opened_date": "2022-04-14 00:00:00",
         "sqft": 10610
     },
     {
-        "store_id": "S030",
+        "store_id": "S031",
         "region": "East",
         "city": "Colombo",
         "opened_date": "2017-10-25 00:00:00",
         "sqft": 9885
     },
     {
-        "store_id": "S031",
-        "region": "South-West",
-        "city": "Homagama",
-        "opened_date": "2017-05-20 00:00:00",
-        "sqft": 9438
-    },
-    {
         "store_id": "S032",
-        "region": "South-East",
-        "city": "Embilipitiya",
-        "opened_date": "2017-11-04 00:00:00",
-        "sqft": 8477
+        "region": "East",
+        "city": "Colombo",
+        "opened_date": "2015-07-26 00:00:00",
+        "sqft": 7634
     },
     {
         "store_id": "S033",
+        "region": "South",
+        "city": "Kandy",
+        "opened_date": "2023-01-18 00:00:00",
+        "sqft": 3984
+    },
+    {
+        "store_id": "S034",
         "region": "East",
-        "city": "Anuradhapura",
+        "city": "Matara",
         "opened_date": "2017-05-13 00:00:00",
         "sqft": 5290
     },
     {
-        "store_id": "S034",
+        "store_id": "S035",
         "region": "North",
-        "city": "Sammanthurai",
+        "city": "Jaffna",
         "opened_date": "2017-10-17 00:00:00",
         "sqft": 8519
     },
     {
-        "store_id": "S035",
+        "store_id": "S036",
         "region": "Central",
-        "city": "Nuwara Eliya",
+        "city": "Matara",
         "opened_date": "2021-03-28 00:00:00",
         "sqft": 9392
     },
     {
-        "store_id": "S036",
-        "region": "West",
-        "city": "Avissawella",
-        "opened_date": "2018-03-29 00:00:00",
-        "sqft": 5657
+        "store_id": "S037",
+        "region": "East",
+        "city": "Kurunegala",
+        "opened_date": "2017-11-25 00:00:00",
+        "sqft": 9168
     },
     {
-        "store_id": "S037",
+        "store_id": "S038",
+        "region": "East",
+        "city": "Galle",
+        "opened_date": "2023-08-24 00:00:00",
+        "sqft": 8415
+    },
+    {
+        "store_id": "S039",
         "region": "South",
-        "city": "Mullaitivu",
+        "city": "Kandy",
         "opened_date": "2022-02-17 00:00:00",
         "sqft": 5193
     },
     {
-        "store_id": "S038",
-        "region": "West",
-        "city": "Matara",
-        "opened_date": "2020-06-04 00:00:00",
-        "sqft": 7950
-    },
-    {
-        "store_id": "S039",
-        "region": "South-West",
-        "city": "Bingiriya",
-        "opened_date": "2024-01-10 00:00:00",
-        "sqft": 3806
-    },
-    {
         "store_id": "S040",
-        "region": "South-East",
-        "city": "Kegalle",
-        "opened_date": "2019-11-04 00:00:00",
-        "sqft": 11974
+        "region": "West",
+        "city": "Jaffna",
+        "opened_date": "2019-07-02 00:00:00",
+        "sqft": 6127
     }
 ]
