@@ -102,9 +102,6 @@ class DataPipeline:
             )
         ).sum()
 
-        # -------------------------------
-        # Loop every dataset
-        # -------------------------------
 
         for name, df in datasets.items():
 
@@ -240,10 +237,8 @@ class DataPipeline:
             if date_col not in df.columns:
                 continue
 
-            # Convert everything to string first
             df[date_col] = df[date_col].astype(str).str.strip()
 
-            # Parse mixed date formats
             df[date_col] = pd.to_datetime(
                 df[date_col],
                 errors="coerce",
@@ -251,16 +246,12 @@ class DataPipeline:
                 utc=True
             )
 
-            # Remove invalid dates
             df.dropna(subset=[date_col], inplace=True)
 
-            # Sort chronologically
             df.sort_values(date_col, inplace=True)
 
-            # Make tz-aware datetime index
             df.set_index(date_col, inplace=True)
 
-            # Keep the column as well if needed later
             df[date_col] = df.index
             print('df[date_col] : ',df[date_col].head())
 
@@ -420,10 +411,6 @@ class DataPipeline:
 
         self.sales = self.sales.loc[valid].copy()
 
-        # -----------------------
-        # Prepare footfall
-        # -----------------------
-
         self.footfall["timestamp"] = pd.to_datetime(
             self.footfall["timestamp"],
             errors="coerce",
@@ -451,9 +438,7 @@ class DataPipeline:
 
         )
 
-        # -----------------------
-        # Prepare sales date
-        # -----------------------
+
 
         self.sales["date"] = pd.to_datetime(
             self.sales["date"],
@@ -466,9 +451,7 @@ class DataPipeline:
             .dt.floor("D")
         )
 
-        # -----------------------
-        # Merge sales + stores
-        # -----------------------
+
 
         merged = self.sales.merge(
 
@@ -480,9 +463,6 @@ class DataPipeline:
 
         )
 
-        # -----------------------
-        # Merge products
-        # -----------------------
 
         merged = merged.merge(
 
@@ -494,9 +474,6 @@ class DataPipeline:
 
         )
 
-        # -----------------------
-        # Merge returns
-        # -----------------------
 
         merged = merged.merge(
 
@@ -508,9 +485,7 @@ class DataPipeline:
 
         )
 
-        # -----------------------
-        # Merge footfall
-        # -----------------------
+
 
         merged = merged.merge(
 

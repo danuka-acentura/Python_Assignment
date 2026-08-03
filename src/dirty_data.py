@@ -28,14 +28,12 @@ def inject_missing_values():
 
         df = pd.read_csv(RAW_DATA / file)
 
-        # Numeric columns -> np.nan only
         for col in numeric_columns:
 
             idx = df.sample(frac=0.03).index
 
             df.loc[idx, col] = np.nan
 
-        # Date columns -> mix np.nan and empty string
         for col in date_columns:
 
             idx = df.sample(frac=0.03).index
@@ -203,6 +201,7 @@ def inject_orphan_store_ids():
         )
         
 def inject_currency_changes():
+    rate =300
 
     df = pd.read_csv(
         RAW_DATA / "sales_2025.csv"
@@ -222,7 +221,7 @@ def inject_currency_changes():
     df["currency"] = "USD"
 
     df["unit_price"] = (
-        df["unit_price"] / 300
+        df["unit_price"] / rate
     ).round(2)
 
     df.to_csv(
@@ -234,18 +233,12 @@ def inject_timezone_mix():
 
     df = pd.read_csv(RAW_DATA / "customer_footfall.csv")
 
-    # Parse timestamps
     timestamps = pd.to_datetime(df["timestamp"])
-
-    # Convert entire column to object (string-capable)
-    df["timestamp"] = timestamps.astype(object)
 
     idx = df.sample(frac=0.5).index
 
-    # Half remain naive
     df["timestamp"] = df["timestamp"].astype(str)
 
-    # Selected rows become UTC-aware strings
     aware = (
         timestamps.loc[idx]
         .dt.tz_localize("UTC")
